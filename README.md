@@ -93,12 +93,10 @@ docker-compose down
 
 ## Repository Notes
 
-The copied Softy Pinko front-end directories are tracked by Git as nested repositories. If a nested front-end directory is committed internally, the parent repository still needs to record the updated nested commit pointer with `git add <path-to-nested-repo>`.
+The Softy Pinko front-end folders are included as copied project files for each task. Some of these folders may still contain their own Git history, so the parent repository can sometimes show a front-end folder as modified after changes are committed inside that folder.
 
-For example:
+When that happens, add the folder from the parent repository so the updated reference is recorded:
 
 ```bash
 git add task6/front-end/softy-pinko-front-end
 ```
-
-Without that parent-level update, `git status` can show the nested directory as modified even when the nested repository itself is clean.
